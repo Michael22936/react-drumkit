@@ -32,6 +32,16 @@ h1 {
   justify-content: center;
   margin-left: 1rem;
   margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.drum:hover{
+  opacity: 0.7;
+}
+
+.drum:active, .drum.playing{
+  transform: scale(1.1);
 }
 
 .drum .key {
