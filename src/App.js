@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {useState} from "react";
+
+import Drum from "./components/Drum";
+
 
 function App() {
+
+	const [sounds, setSounds] = useState([
+		{
+		  name: "boom",
+		  sound: require("./sounds/src_sounds_boom.wav"),
+		  key: "A",	
+		},
+		{
+		  name: "clap",
+		  sound: require("./sounds/src_sounds_clap.wav"),
+		  key: "S",	
+		},
+	]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+		<h1>React Drumkit</h1>
+		{sounds.map((sound, i) => (
+		<Drum key={i} letter= {sound.key} sound={sound.sound}/>
+		))}
+	</div>
   );
 }
 
