@@ -6,8 +6,8 @@ const play = () => {
 }
 
   return (
-    <div className="drum">
-        <div className="key" onClick={play}>{props.letter}</div>
+    <div className="drum" onClick={play}>
+        <div className="key">{props.letter}</div>
     </div>
   )
 }

@@ -22,9 +22,11 @@ function App() {
   return (
     <div className="App">
 		<h1>React Drumkit</h1>
-		{sounds.map((sound, i) => (
-		<Drum key={i} letter= {sound.key} sound={sound.sound}/>
-		))}
+		<div className="drums">
+			{sounds.map((sound, i) => (
+				<Drum key={i} letter= {sound.key} sound={sound.sound}/>
+			))}
+		</div>
 	</div>
   );
 }
